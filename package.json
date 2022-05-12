@@ -17,5 +17,11 @@
     },
     "scripts": {
         "postinstall": "npm run prod"
+    },
+    name": "hexlet/code",
+    "description": "php task manager",
+    "version": "1.0.0",
+    "engines": {
+        "node": "16.x"
     }
 }
