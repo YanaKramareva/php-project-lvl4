@@ -18,7 +18,7 @@
     "scripts": {
         "postinstall": "npm run prod"
     },
-    name": "hexlet/code",
+    "name": "hexlet-php-task-manager",
     "description": "php task manager",
     "version": "1.0.0",
     "engines": {
