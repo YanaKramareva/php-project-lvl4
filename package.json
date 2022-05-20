@@ -22,7 +22,8 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "@rails/ujs": "^7.0.1"
+        "@rails/ujs": "^7.0.1",
+        "i18next": "^21.8.2"
     },
     "engines": {
         "node": "16.x",
