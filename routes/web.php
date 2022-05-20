@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskStatusController;
 use App\Http\Controllers\TaskController;
@@ -17,7 +18,8 @@ use App\Http\Controllers\LabelController;
 */
 
 Route::get(
-    '/', function () {
+    '/',
+    function () {
         return view('welcome');
     }
 )->name('welcome');
