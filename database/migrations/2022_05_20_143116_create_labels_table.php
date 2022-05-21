@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create(
-            'labels', function (Blueprint $table) {
+            'labels',
+            function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
                 $table->text('description')->nullable();

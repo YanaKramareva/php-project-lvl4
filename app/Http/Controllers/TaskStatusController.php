@@ -30,9 +30,11 @@ class TaskStatusController extends Controller
     public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $taskStatusInputData = $this->validate(
-            $request, [
+            $request,
+            [
             'name' => 'required|max:255|unique:task_statuses'
-            ], $messages = [
+            ],
+            $messages = [
             'unique' => __('validation.The status name has already been taken'),
             'max' => __('validation.The name should be no more than :max characters'),
             ]
@@ -53,9 +55,11 @@ class TaskStatusController extends Controller
     public function update(Request $request, TaskStatus $taskStatus): \Illuminate\Http\RedirectResponse
     {
         $taskStatusInputData = $this->validate(
-            $request, [
+            $request,
+            [
             'name' => 'required|max:255|unique:task_statuses,name,' . $taskStatus->id
-            ], $messages = [
+            ],
+            $messages = [
             'unique' => __('validation.The status name has already been taken'),
             'max' => __('validation.The name should be no more than :max characters'),
             ]

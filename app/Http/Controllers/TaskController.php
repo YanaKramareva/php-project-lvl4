@@ -72,7 +72,8 @@ class TaskController extends Controller
             'description' => 'nullable|string',
             'assigned_to_id' => 'nullable|integer',
             'labels' => 'nullable|array'
-            ], $messages = [
+            ],
+            $messages = [
             'unique' => __('validation.The task name has already been taken'),
             'max' => __('validation.The name should be no more than :max characters'),
             ]
@@ -125,13 +126,15 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         $taskInputData = $this->validate(
-            $request, [
+            $request,
+            [
             'name' => 'required|max:255|unique:tasks,name,' . $task->id,
             'description' => 'nullable|string',
             'status_id' => 'required',
             'assigned_to_id' => 'nullable|integer',
             'labels' => 'nullable|array'
-            ], $messages = [
+            ],
+            $messages = [
             'unique' => __('validation.The task name has already been taken'),
             'max' => __('validation.The name should be no more than :max characters'),
             ]

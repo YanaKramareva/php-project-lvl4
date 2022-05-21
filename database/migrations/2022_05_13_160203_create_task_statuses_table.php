@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create(
-            'task_statuses', function (Blueprint $table) {
+            'task_statuses',
+            function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
                 $table->timestamps();

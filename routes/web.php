@@ -17,14 +17,27 @@ use App\Http\Controllers\LabelController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+
+Route::get(
+    '/',
+    function () {
+        return view('welcome');
+    }
+);
+
+Route::get(
+    '/home',
+    function () {
+        return view('welcome');
+    }
+)->name('welcome');
 
 Auth::routes();
 
-Route::resources([
+Route::resources(
+    [
     'task_statuses' => TaskStatusController::class,
     'tasks' => TaskController::class,
     'labels' => LabelController::class,
-]);
+    ]
+);

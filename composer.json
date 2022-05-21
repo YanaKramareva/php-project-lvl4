@@ -17,7 +17,8 @@
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
         "rollbar/rollbar-laravel": "^7.0",
-        "spatie/laravel-query-builder": "^4.0"
+        "spatie/laravel-query-builder": "^4.0",
+        "twbs/bootstrap": "4.0.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"

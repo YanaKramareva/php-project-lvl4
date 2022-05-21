@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Task;
 
 class User extends Authenticatable
 {
@@ -30,13 +31,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tasks(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function tasks(): HasMany
     {
-        return $this->hasMany('App\Models\Task', 'created_by_id');
+        return $this->hasMany(Task::class, 'created_by_id');
     }
 
-    public function tasksAssign()
+    public function tasksAssign(): HasMany
     {
-        return $this->hasMany('App\Models\Task', 'assigned_to_id');
+        return $this->hasMany(Task::class, 'assigned_to_id');
     }
 }
