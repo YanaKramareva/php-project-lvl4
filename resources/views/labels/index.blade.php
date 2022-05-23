@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="mb-5">{{ __('labels.Labels') }}</h1>
         @if(Auth::check())
-            <a href="{{ route('labels.create') }}" class="btn btn-primary">{{ __('labels.Create label') }}</a>
+            <a href="{{ route('labels.create') }}" class="btn btn-info">{{ __('labels.Create label') }}</a>
         @endif
         <table class="table mt-2">
             <thead>

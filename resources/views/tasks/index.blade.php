@@ -17,14 +17,14 @@
                         {{Form::select('filter[assigned_to_id]', $users, $filter['assigned_to_id'] ?? null, ['placeholder' => __('tasks.Executor'), 'class' => 'form-select me-2'])}}
                     </div>
                     <div class="col">
-                        {{Form::submit(__('tasks.Apply'), ['class' => 'btn btn-outline-primary me-2'])}}
+                        {{Form::submit(__('tasks.Apply'), ['class' => 'btn btn-outline-info me-5'])}}
                     </div>
                     {{Form::close()}}
                 </div>
             </div>
             <div class="ms-auto">
                 @if(Auth::check())
-                    <a href="{{ route('tasks.create') }}" class="btn btn-primary ml-auto">{{ __('tasks.Create task') }}</a>
+                    <a href="{{ route('tasks.create') }}" class="btn btn-info ml-auto">{{ __('tasks.Create task') }}</a>
                 @endif
             </div>
         </div>

@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="mb-5">{{ __('taskStatuses.Statuses') }}</h1>
         @if(Auth::check())
-            <a href="{{ route('task_statuses.create') }}" class="btn btn-primary">{{ __('taskStatuses.Create status') }}</a>
+            <a href="{{ route('task_statuses.create') }}" class="btn btn-info">{{ __('taskStatuses.Create status') }}</a>
         @endif
         <table class="table mt-2">
             <thead>

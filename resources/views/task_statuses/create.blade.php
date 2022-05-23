@@ -14,6 +14,6 @@
             @endif
         </div>
     </div>
-    {{Form::submit(__('taskStatuses.Create'), ['class' => 'btn btn-primary mt-3'])}}
+    {{Form::submit(__('taskStatuses.Create'), ['class' => 'btn btn-info mt-3'])}}
     {{ Form::close() }}
 @endsection('content')
