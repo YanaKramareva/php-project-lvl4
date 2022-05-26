@@ -19,5 +19,5 @@ return [
     'Name' => 'Имя',
     'Password' => 'Пароль',
     'Confirm Password' => 'Подтверждение',
-    'Please confirm your password before continuing.' => "Пожалуйста, подтвертите свой пароль перед продолжением."
+    'Please confirm your password before continuing.' => "Пожалуйста, подтвердите свой пароль перед продолжением."
 ];

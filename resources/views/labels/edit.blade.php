@@ -19,6 +19,6 @@
         {{Form::textarea('description', null, ['class' => 'form-control', 'cols' => '50', 'rows' => '10'])}}
     </div>
 
-    {{Form::submit(__('labels.Update'), ['class' => 'btn btn-primary mt-3'])}}
+    {{Form::submit(__('labels.Update'), ['class' => 'btn btn-info mt-3'])}}
     {{Form::close()}}
 @endsection('content')
