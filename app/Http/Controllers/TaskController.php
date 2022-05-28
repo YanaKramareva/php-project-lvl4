@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\TaskStatus;
 use App\Models\User;
 use App\Models\Label;
+use Rollbar\Payload\Level;
+use Rollbar\Rollbar;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -20,14 +23,12 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index(Request $request)
     {
         $taskStatuses = TaskStatus::pluck('name', 'id')->all();
         $users = User::pluck('name', 'id')->all();
-
-        \Log::debug('Test some debug information');
 
         $tasks = QueryBuilder::for(Task::class)
             ->allowedFilters(
@@ -41,6 +42,8 @@ class TaskController extends Controller
             ->paginate();
 
         $filter = $request->filter ?? null;
+        Rollbar::log(Level::info(), 'Test info message');
+
         return view('tasks.index', compact('tasks', 'taskStatuses', 'users', 'filter'));
     }
 
