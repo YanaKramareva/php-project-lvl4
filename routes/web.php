@@ -18,15 +18,9 @@ use App\Http\Controllers\LabelController;
 */
 
 
-Route::get(
-    '/',
-    function () {
-        return view('welcome');
-    }
-);
 
 Route::get(
-    '/home',
+    '/',
     function () {
         return view('welcome');
     }
