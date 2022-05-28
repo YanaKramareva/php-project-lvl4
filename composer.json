@@ -5,23 +5,20 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
-        "barryvdh/laravel-cors": "^3.0",
+        "php": "^7.3|^8.0",
         "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laracasts/flash": "^3.2",
-        "laravel/framework": "^v9.13.0",
+        "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
         "rollbar/rollbar-laravel": "^7.0",
-        "spatie/laravel-query-builder": "^4.0",
-        "twbs/bootstrap": "4.0.0"
+        "spatie/laravel-query-builder": "^4.0"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
@@ -56,7 +53,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "plshpcs": "phpcs",
+        "phpcs": "phpcs",
         "phpcbf": "phpcbf"
     },
     "extra": {
