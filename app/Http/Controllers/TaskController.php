@@ -42,7 +42,6 @@ class TaskController extends Controller
             ->paginate();
 
         $filter = $request->filter ?? null;
-        Rollbar::log(Level::info(), 'Test info message');
 
         return view('tasks.index', compact('tasks', 'taskStatuses', 'users', 'filter'));
     }

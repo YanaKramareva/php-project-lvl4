@@ -12,7 +12,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '^8.1'
+        php-version: '8-cli'
     - name: PHP Security Checker
       uses: StephaneBour/actions-php-security-checker@1.1
 
@@ -25,7 +25,7 @@ jobs:
     - name: Execute tests via PHPUnit
       run: make test-coverage
     - name: Show test coverage
-      uses: paambaati/codeclimate-action@v3.0.0
+      uses: paambaati/codeclimate-action@v2.6.0
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
