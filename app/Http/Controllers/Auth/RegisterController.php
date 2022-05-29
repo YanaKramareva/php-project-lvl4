@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    use RegistersUsers;
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -21,7 +23,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -40,26 +41,37 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
     protected function validator(array $data)
     {
-        return Validator::make(
-            $data,
-            [
+        return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            ]
-        );
+        ], $messages = [
+            'password.max' => __('validation.The password must not be greater than :max characters.'),
+            'password.min' => __('validation.The password must be at least :min characters.'),
+            'password.confirmed' => __('validation.The password and confirmation do not match.')
+        ]);
     }
 
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
     protected function create(array $data): User
     {
-        return User::create(
-            [
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            ]
-        );
+        ]);
     }
 }
