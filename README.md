@@ -10,8 +10,8 @@ Task Manager is a task management system.
 It allows you to create tasks, assign performers, change their statuses and put labels.
 Registration and authentication are required to work with the system.
 
-Purpose
-The application was developed for learning the Laravel framework and PostgreSQL. Deployed using PaaS Heroku.
+### Purpose
+The application was developed for learning the Laravel framework and PostgresSQL. Deployed using PaaS Heroku.
 
 ### Demo-link:
 https://hexlet-php-task-manager.herokuapp.com/
