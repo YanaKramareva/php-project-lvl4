@@ -17,7 +17,7 @@ The application was developed for learning the Laravel framework and PostgreSQL.
 https://hexlet-php-task-manager.herokuapp.com/
 
 ### Requirements
-###### PHP ^8.0
+###### PHP ^8.1
 ###### Node.js & npm
 ###### Sqlite for local
 ###### Heroku CLI
