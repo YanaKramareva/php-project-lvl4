@@ -22,7 +22,7 @@ return [
     'Date of creation' => 'Дата создания',
     'Actions' => 'Действия',
     'Apply' => 'Применить',
-    'Task name' => 'Имя',
+    'Name' => 'Название',
     'Author' => 'Автор',
     'Description' => 'Описание',
     'Executor' => 'Исполнитель',

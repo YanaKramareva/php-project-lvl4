@@ -16,6 +16,5 @@ class WelcomePageTest extends TestCase
         $response = $this->get(route('welcome'));
 
         $response->assertOk();
-        $response->assertSee('Привет от Хекслета!');
     }
 }

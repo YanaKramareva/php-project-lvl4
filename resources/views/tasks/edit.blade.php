@@ -4,7 +4,7 @@
     <h1 class="mb-5">{{ __('tasks.Edit task') }}</h1>
     {{Form::model($task, ['url' => route('tasks.update', ['task' => $task]), 'method' => 'PATCH'])}}
     <div class="form-group mb-3">
-        {{Form::label('name', __('tasks.Task name'))}}
+        {{Form::label('name', __('tasks.Name'))}}
         {{Form::text('name', $task->name, ['class' => 'form-control'])}}
         @if ($errors->has('name'))
             @error('name')
@@ -14,13 +14,13 @@
     </div>
     <div class="form-group mb-3">
         {{Form::label('description', __('tasks.Description'))}}
-        {{Form::textarea('description', null, ['class' => 'form-control', 'cols' => '50', 'rows' => '10'])}}
+        {{Form::textarea('description', null, ['class' => 'form-control', 'cols' => '20', 'rows' => '10'])}}
     </div>
     <div class="form-group mb-3">
         {{Form::label('status_id', __('taskStatuses.Status'))}}
         {{Form::select('status_id', $taskStatuses, null, ['placeholder' => '----------', 'class' => 'form-control'])}}
-        @if ($errors->has('name'))
-            @error('name')
+        @if ($errors->has('status_id'))
+            @error('status_id')
             <div class="invalid-feedback d-block">{{ $message }}</div>
             @enderror
         @endif
@@ -33,6 +33,6 @@
         {{Form::label('label_id', __('labels.Labels'))}}
         {{Form::select('label_id', $labels, $task->labels, ['placeholder' => '', 'multiple' => 'multiple', 'name' => 'labels[]', 'class' => 'form-control'])}}
     </div>
-    {{Form::submit(__('tasks.Update'), ['class' => 'btn btn-primary mt-3'])}}
+    {{Form::submit(__('tasks.Update'), ['class' => 'btn btn-info mt-3'])}}
     {{Form::close()}}
 @endsection('content')

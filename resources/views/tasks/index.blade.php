@@ -32,10 +32,10 @@
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">{{ __('taskStatuses.Status') }}</th>
-                <th scope="col">{{ __('tasks.Task name') }}</th>
-                <th scope="col">{{ __('tasks.Author') }}</th>
-                <th scope="col">{{ __('tasks.Executor') }}</th>
+                <th scope="col" class="text-break">{{ __('taskStatuses.Status') }}</th>
+                <th scope="col" class="text-break">{{ __('tasks.Name') }}</th>
+                <th scope="col" class="text-break">{{ __('tasks.Author') }}</th>
+                <th scope="col" class="text-break">{{ __('tasks.Executor') }}</th>
                 <th scope="col">{{ __('tasks.Date of creation') }}</th>
                 @if(Auth::check())
                     <th scope="col">{{ __('tasks.Actions') }}</th>
@@ -46,8 +46,8 @@
                 @foreach ($tasks as $task)
                     <tr>
                         <td>{{ $task->id }}</td>
-                        <td scope="row"> {{ $task->status->name }} </td>
-                        <td><a href="{{ route('tasks.show', ['task' => $task->id]) }}">{{ $task->name }}</a></td>
+                        <td> {{ $task->status->name }} </td>
+                        <td class="text-break"><a href="{{ route('tasks.show', ['task' => $task->id]) }}">{{ $task->name }}</a></td>
                         <td>{{ $task->creator->name }}</td>
                         <td>{{ $task->executor->name ?? null }}</td>
                         <td>{{ $task->created_at->format('d.m.Y') }}</td>
