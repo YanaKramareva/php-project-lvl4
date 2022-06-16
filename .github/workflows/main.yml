@@ -16,8 +16,6 @@ jobs:
         tools: none
     - name: PHP Security Checker
       uses: StephaneBour/actions-php-security-checker@1.1
-      with:
-        composer-lock: './composer.lock'
 
     - name: Setup project
       run: make setup
