@@ -4,7 +4,7 @@
     <h1 class="mb-5">{{ __('tasks.Create task') }}</h1>
     {{Form::open(['url' => route('tasks.store'), 'class' => 'w-50'])}}
     <div class="form-group mb-3">
-        {{Form::label('name', __('tasks.Task name'))}}
+        {{Form::label('name', __('tasks.Name'))}}
         {{Form::text('name', $task->name, ['class' => 'form-control'])}}
         @if ($errors->has('name'))
             @error('name')
@@ -34,4 +34,4 @@
         </div>
     {{Form::submit(__('tasks.Create'), ['class' => 'btn btn-info mt-3'])}}
     {{Form::close()}}
-@endsection('content')
+@endsection
