@@ -5,12 +5,7 @@
     {{Form::open(['url' => route('tasks.store'), 'class' => 'w-50'])}}
     <div class="form-group mb-3">
         {{Form::label('name', __('tasks.Name'))}}
-        {{Form::text('name', $task->name, ['class' => 'form-control'])}}
-        @if ($errors->has('name'))
-            @error('name')
-            <div class="invalid-feedback d-block">{{ $message }}</div>
-            @enderror
-        @endif
+        {{Form::bsText('name', $task->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : '')])}}
     </div>
     <div class="form-group mb-3">
         {{Form::label('description', __('tasks.Description'))}}
@@ -18,19 +13,14 @@
     </div>
     <div class="form-group mb-3">
         {{Form::label('status_id', __('taskStatuses.Status'))}}
-        {{Form::select('status_id', $taskStatuses, null, ['placeholder' => '----------', 'class' => 'form-control'])}}
-        @if ($errors->has('status_id'))
-            @error('status_id')
-            <div class="invalid-feedback d-block">{{ $message }}</div>
-            @enderror
-        @endif
+        {{Form::bsSelect('status_id', $taskStatuses, null, ['placeholder' => '----------', 'class' => 'form-control' . ($errors->has('status_id') ? ' is-invalid' : '')])}}
     </div>
     <div class="form-group mb-3">
         {{Form::label('assigned_to_id', __('tasks.Executor'))}}
-        {{Form::select('assigned_to_id', $executors, null, ['placeholder' => '----------', 'class' => 'form-control'])}}
+        {{Form::bsSelect('assigned_to_id', $executors)}}
         <div class="form-group mb-3">
             {{Form::label('label_id', __('labels.Labels'))}}
-            {{Form::select('label_id', $labels, $task->labels, ['placeholder' => '', 'multiple' => 'multiple', 'name' => 'labels[]', 'class' => 'form-control'])}}
+            {{Form::bsSelect('label_id', $labels, $task->labels, ['placeholder' => '', 'multiple' => 'multiple', 'name' => 'labels[]', 'class' => 'form-control'])}}
         </div>
     {{Form::submit(__('tasks.Create'), ['class' => 'btn btn-info mt-3'])}}
     {{Form::close()}}
